@@ -12,7 +12,7 @@
     "threejs",
     "stage3d"
   ],
-  "license": "SEE LICENSE IN LICENSE",
+  "license": "MIT",
   "dependencies": {
     "three": "^0.171.0"
   }
