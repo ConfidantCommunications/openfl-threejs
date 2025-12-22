@@ -1,0 +1,14 @@
+{
+  "name": "openfl-threejs",
+  "url": "https://github.com/ConfidantCommunications/openfl-threejs",
+  "license": "MIT",
+  "description": "A bridge for enabling Three.js to use OpenFL Stage3D as a rendering context",
+  "version": "0.1.0",
+  "releasenote": "Initial release",
+  "contributors": ["ConfidantCommunications"],
+  "tags": ["openfl", "threejs", "stage3d", "webgl"],
+  "classPath": "src",
+  "dependencies": {
+    "openfl": ""
+  }
+}
