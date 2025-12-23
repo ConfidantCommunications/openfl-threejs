@@ -1,6 +1,9 @@
 package;
 
 import openfl.display.Sprite;
+import openfl.display3D.Context3D;
+import openfl.display.Stage3D;
+import openfl.events.Event;
 import three.*;
 
 import Stage3DManager;
@@ -14,15 +17,37 @@ class Main extends Sprite
 	public function new()
 	{
 		super();
-		init();
-	}
-	public function init():Void
-	{
+		
 
+		if( stage.stage3Ds.length > 0 )
+			{
+				var stage3D:Stage3D = stage.stage3Ds[0];
+				stage3D.addEventListener( Event.CONTEXT3D_CREATE, myContext3DHandler );
+				stage3D.requestContext3D( );
+			}
+	
+			
+	}
+	private function myContext3DHandler ( event : Event ) : Void {
+		var targetStage3D : Stage3D = cast event.target;
+		// InitAll3DResources( targetStage3D.context3D );
+		// StartRendering( targetStage3D.context3D );
+		var webGLRenderContext:Dynamic = @:privateAccess targetStage3D.context3D.gl;
+		/* cn.getContextAttributes = function() {
+			return {
+				alpha:1
+			}
+		} */
+		init(webGLRenderContext);
+	}
+	public function init(context3D:Context3D):Void
+	{
+		trace("init");
 		var width = stage.stageWidth;
 		var height = stage.stageHeight;
 
-		var stage3DManager = Stage3DManager.getInstance(stage);
+
+		// var stage3DManager = Stage3DManager.getInstance(stage);
 		
 		// init
 		
@@ -44,7 +69,8 @@ class Main extends Sprite
 
 		renderer = untyped new WebGLRenderer({
 			antialias: true,
-			context: untyped stage3DManager.getFreeStage3DProxy().context3D,
+			context: context3D,
+			// context: untyped stage3DManager.getFreeStage3DProxy().context3D,
 			// context: untyped stage3DManager.getFreeStage3DProxy().requestContext3D(),
 			powerPreference: "high-performance",
 			failIfMajorPerformanceCaveat: false,
