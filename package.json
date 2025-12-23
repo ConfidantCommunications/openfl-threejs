@@ -14,6 +14,8 @@
   ],
   "license": "MIT",
   "dependencies": {
+    "@types/three": "^0.182.0",
+    "openfl": "^9.5.0",
     "three": "^0.171.0"
   }
 }

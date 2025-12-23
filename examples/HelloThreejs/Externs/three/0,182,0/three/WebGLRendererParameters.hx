@@ -1,0 +1,73 @@
+package three;
+
+typedef WebGLRendererParameters = {
+	/**
+		A Canvas where the renderer draws its output.
+	**/
+	@:optional
+	var canvas : ts.AnyOf2<js.html.CanvasElement, OffscreenCanvas>;
+	/**
+		A WebGL Rendering Context.
+		(https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext)
+		Default is null
+	**/
+	@:optional
+	var context : js.html.webgl.RenderingContext;
+	/**
+		default is false.
+	**/
+	@:optional
+	var alpha : Bool;
+	/**
+		default is true.
+	**/
+	@:optional
+	var premultipliedAlpha : Bool;
+	/**
+		default is false.
+	**/
+	@:optional
+	var antialias : Bool;
+	/**
+		default is false.
+	**/
+	@:optional
+	var stencil : Bool;
+	/**
+		default is false.
+	**/
+	@:optional
+	var preserveDrawingBuffer : Bool;
+	/**
+		Can be "high-performance", "low-power" or "default"
+	**/
+	@:optional
+	var powerPreference : js.html.WebGLPowerPreference;
+	/**
+		default is true.
+	**/
+	@:optional
+	var depth : Bool;
+	/**
+		default is false.
+	**/
+	@:optional
+	var failIfMajorPerformanceCaveat : Bool;
+	@:optional
+	var outputBufferType : TextureDataType;
+	/**
+		shader precision. Can be "highp", "mediump" or "lowp".
+	**/
+	@:optional
+	var precision : String;
+	/**
+		default is false.
+	**/
+	@:optional
+	var logarithmicDepthBuffer : Bool;
+	/**
+		default is false.
+	**/
+	@:optional
+	var reversedDepthBuffer : Bool;
+};

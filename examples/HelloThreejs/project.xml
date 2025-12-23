@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+	<haxedef name="modular" />
+	
+	<meta title="HelloThreejs" package="" version="1.0.0" company="Confidant Communications" />
+	<app main="Main" path="Export" file="HelloThreejs" />
+	
+	<set name="jsimports" value="import * as THREE from 'three';" if="html5" />
+	<source path="Source" />
+	<source path="../../src" />
+	<source path="Externs" />
+	
+	<haxelib name="openfl" />
+	<haxelib name="three" />
+	<assets path="Assets" rename="assets" />
+	<template path="templates" />
+	<template path="templates/html5/index.html" rename="index.html" />
+</project>
